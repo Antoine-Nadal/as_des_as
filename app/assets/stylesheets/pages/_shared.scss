@@ -1,0 +1,13 @@
+body{
+  // text-align:center;
+ // Line 1
+  display:flex;
+ // Line 2
+  flex-direction:column;
+ // Line 3
+  min-height:100vh;
+}
+.wrapper{
+ // Line 4
+  flex:1;
+}
