@@ -1,0 +1,7 @@
+<h1>voici toutes les gaming parties créées:</h1>
+
+    <% @gaming_sessions.each do |event| %>
+      <ul>
+        <li><%= link_to event.name, gaming_session_path(event)%></li>
+      </ul>
+    <% end %>
