@@ -2,14 +2,14 @@ class BookingsController < ApplicationController
   before_action :set_gaming_session, only: %i[create]
 
   def create
-    # @user = User.find(params[:user_id])
     @booking = Booking.new(booking_params)
     @booking.gaming_session = @gaming_session
-    # @booking.user = @user
+    @booking.user = current_user
     if @booking.save
-      redirect_to gaming_session_path(@gaming_session)
+      redirect_to dashboard_path, notice: "succesfully done"
+      # a rediriger sur le dashboard du user
     else
-      render :new, status: :unprocessable_entity
+      render 'gaming_sessions/show', status: :unprocessable_entity
     end
   end
 
