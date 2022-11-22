@@ -1,5 +1,5 @@
 class GamingSessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @gaming_sessions = GamingSession.all
