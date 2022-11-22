@@ -1,9 +1,9 @@
-<br>
+<div class="container" style="margin-top: 100px;">
   <div class="row ">
     <div class="col-6" >
-      <div class="card-map" style="position:fixed;">
-        <h2>Découvrez votre bar à jeu favori, et venez découvrir pleins de nouveaux jeux avec vos amis!</h2>
+      <div class="card-map">
         <div class="mapping">
+          <h2>Découvrez votre bar à jeu favori, et venez découvrir pleins de nouveaux jeux avec vos amis!</h2>
           <%= image_tag "map.png", alt: "map" %>
         </div>
       </div>
@@ -13,9 +13,10 @@
         <div class="row align-items-end">
             <div class="card-session">
                 <%=image_tag "bar_a_jeu_2", alt:"photo random de bar à jeu"%>
-                <div class="card-session-infos">
-                  <p><%= link_to gaming_session.name, gaming_session_path(gaming_session) %></p>
-                  <p> <%= gaming_session.address %> <strong> <%= gaming_session.number_of_participants %> </strong> </p>
+                <div class="card-session-infos"  >
+                  <h2><%= link_to gaming_session.name, gaming_session_path(gaming_session)%></h2>
+                  <p> <%= gaming_session.address %></p>
+                  <p> Nombre de participants :<strong>  <%= gaming_session.number_of_participants %> </strong> </p>
                   <p> <%= gaming_session.description %> </p>
                 </div>
             </div>
@@ -24,6 +25,4 @@
     </div>
 
   </div>
-<br>
-
-<%= link_to @gaming_sessions.first.name, gaming_session_path(@gaming_sessions.first) %>
+</div>
