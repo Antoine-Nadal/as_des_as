@@ -11,19 +11,19 @@
     <div class="col-6 align-items-end">
       <% @gaming_sessions.each do |gaming_session| %>
         <div class="row align-items-end">
-          <%# <div class="col-6 "> %>
             <div class="card-session">
-                <img src="" />
+                <%=image_tag "bar_a_jeu_2", alt:"photo random de bar à jeu"%>
                 <div class="card-session-infos">
-                <h2><%= link_to gaming_session.name, gaming_session_path(gaming_session)%></h2>
-                <p> <%= gaming_session.address %> <strong> <%= gaming_session.number_of_participants %> </strong> </p>
-                <p> <%= gaming_session.description %> </p>
+                  <p><%= link_to gaming_session.name, gaming_session_path(gaming_session) %></p>
+                  <p> <%= gaming_session.address %> <strong> <%= gaming_session.number_of_participants %> </strong> </p>
+                  <p> <%= gaming_session.description %> </p>
                 </div>
-            <%# </div> %>
-          </div>
+            </div>
         </div>
       <% end %>
     </div>
 
   </div>
 <br>
+
+<%= link_to @gaming_sessions.first.name, gaming_session_path(@gaming_sessions.first) %>
