@@ -1,13 +1,39 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  box-shadow: 0px 0px 5px 2px #00000040;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 30px;
+
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 200px;
   margin: 10px;
+}
+
+.nav-link {
+  font-family: 'Josefin Sans';
+  font-size: 16px;
+  // font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+
+  gap: 10px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
 }

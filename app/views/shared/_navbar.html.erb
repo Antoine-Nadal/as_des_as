@@ -1,5 +1,5 @@
-<div class="sticky-top">
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<%# <div class="sticky-top"> %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="position:fixed; z-index: 10;">
     <div class="container-fluid">
       <%= link_to "/", class: "navbar-brand" do %>
         <%= image_tag "As des as0.png", alt: "As des as" %>
@@ -11,11 +11,11 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-        <li class= "nav-item">
-          <%= link_to "ajouter mon bar à jeu", new_gaming_session_path, class: "nav-link"%>
+        <li>
+          <%= link_to "CRÉER MON GAME BAR", new_gaming_session_path, class: "button-blue", style:"color:white"%>
           </li>
           <% if user_signed_in? %>
-            <li class="nav-item active">
+            <li class="button-blue">
               <%= link_to "Home", "/", class: "nav-link" %>
             </li>
             <li class="nav-item">
@@ -30,10 +30,16 @@
               </div>
             </li>
           <% else %>
-             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <ul>
+            <li>
+              <%= link_to new_user_session_path do %>
+                <i class=" fa-solid fa-bars"></i>
+              <% end %>
+            </li>
+            </ul>
           <% end %>
         </ul>
       </div>
     </div>
   </div>
-</div>
+<%# </div> %>
