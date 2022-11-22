@@ -7,6 +7,7 @@ class GamingSessionsController < ApplicationController
 
   def show
     @gaming_session = GamingSession.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
