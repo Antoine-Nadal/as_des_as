@@ -6,6 +6,7 @@
     <%= f.input :game%>
     <%= f.input :number_of_participants%>
     <%= f.input :description%>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
 </div>
