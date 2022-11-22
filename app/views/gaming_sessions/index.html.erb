@@ -1,11 +1,29 @@
-<h1>voici toutes les gaming parties créées:</h1>
+<br>
+  <div class="row ">
+    <div class="col-6" >
+      <div class="card-map" style="position:fixed;">
+        <h2>Découvrez votre bar à jeu favori, et venez découvrir pleins de nouveaux jeux avec vos amis!</h2>
+        <div class="mapping">
+          <%= image_tag "map.png", alt: "map" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 align-items-end">
+      <% @gaming_sessions.each do |gaming_session| %>
+        <div class="row align-items-end">
+          <%# <div class="col-6 "> %>
+            <div class="card-session">
+                <img src="" />
+                <div class="card-session-infos">
+                <h2><%= link_to gaming_session.name, gaming_session_path(gaming_session)%></h2>
+                <p> <%= gaming_session.address %> <strong> <%= gaming_session.number_of_participants %> </strong> </p>
+                <p> <%= gaming_session.description %> </p>
+                </div>
+            <%# </div> %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-    <% @gaming_sessions.each do |gaming_session| %>
-      <ul>
-        <li>
-          <%= link_to gaming_session.name, gaming_session_path(gaming_session)%>
-        </li>
-      </ul>
-    <% end %>
-
-<%= link_to "New", new_gaming_session_path%>
+  </div>
+<br>
