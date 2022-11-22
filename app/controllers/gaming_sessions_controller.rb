@@ -47,7 +47,7 @@ class GamingSessionsController < ApplicationController
   private
 
   def gaming_sessions_params
-    params.require(:gaming_session).permit(:name, :date, :number_of_participants, :address, :game, :description)
+    params.require(:gaming_session).permit(:name, :date, :number_of_participants, :address, :game, :description, photos: [])
   end
 
   def set_gaming_session
