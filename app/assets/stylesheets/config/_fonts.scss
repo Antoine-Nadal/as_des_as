@@ -14,3 +14,29 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1 {
+  font-family: "Comfortaa", sans-serif;
+  color: #19407D;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "Comfortaa", sans-serif;
+  color: #19407D;
+  font-size: 56px;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
+font-size: 24px;
+font-weight: 300;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+}
+
+
+//styleName: Corps de text;

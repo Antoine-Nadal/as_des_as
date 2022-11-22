@@ -4,3 +4,55 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "footer";
+
+
+.card-session {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0px 0px 6px 1px #17407C21;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0;
+  margin-bottom: 1em;
+}
+
+.card-session img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  background-color: gray;
+}
+
+.card-session h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-session p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-session .card-session-infos {
+  padding: 16px;
+}
+
+
+.card-map h2 {
+  width: 40%;
+}
+
+.mapping img {
+  height: 80%;
+  width: 40%;
+  background-position: center;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 1px #17407C21;
+}
