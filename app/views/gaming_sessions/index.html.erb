@@ -13,7 +13,7 @@
         <div class="row align-items-end">
           <%# <div class="col-6 "> %>
             <div class="card-session">
-                <img src="" />
+                <%=image_tag "bar_a_jeu_2", alt:"photo random de bar à jeu"%>
                 <div class="card-session-infos">
                 <h2><%= link_to gaming_session.name, gaming_session_path(gaming_session)%></h2>
                 <p> <%= gaming_session.address %> <strong> <%= gaming_session.number_of_participants %> </strong> </p>
