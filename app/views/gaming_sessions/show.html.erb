@@ -2,7 +2,9 @@
 
 <%= @gaming_session.name %>
 
+
 <% if policy(@gaming_session).edit? %>
   <%= link_to "Edit this gaming session", edit_gaming_session_path(@gaming_session) %> |
 <% end %>
 <%= button_to "Destroy this gaming session", @gaming_session, method: :delete if policy(@gaming_session).destroy? %>
+<%= render "shared/form_booking" %>

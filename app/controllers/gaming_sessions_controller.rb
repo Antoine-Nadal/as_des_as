@@ -1,5 +1,5 @@
 class GamingSessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_gaming_session, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -8,6 +8,7 @@ class GamingSessionsController < ApplicationController
 
   def show
     authorize @gaming_session
+    @booking = Booking.new
   end
 
   def new

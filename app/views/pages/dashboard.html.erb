@@ -1,0 +1,5 @@
+<ul>
+<% @bookings.each do |booking| %>
+<li> <%= booking.gaming_session.name %> : <%= booking.start_date %> - <%= booking.end_date %></li>
+<% end %>
+</ul>
