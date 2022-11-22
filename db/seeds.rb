@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "destruction de la base de données bar à jeu..."
+
 GamingSession.destroy_all
 puts "...destruction faite"
 puts "maintenant au tour des Users..."
