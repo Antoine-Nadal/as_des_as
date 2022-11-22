@@ -19,7 +19,14 @@
           <li>
             User        : <%= booking.user.first_name %> <%= booking.user.last_name %>
             Réservation : <%= booking.gaming_session.name %> : du <%= booking.start_date %> au <%= booking.end_date %>
-            <%= link_to 'accepter' %> /// <%= link_to 'refuser' %>
+            <div class="d-flex column-align">
+              <div class="m-2">
+                <%= button_to 'accepter', class: "btn btn-success" %>
+              </div>
+              <div class="m-2">
+                <%= button_to 'refuser',  class: "btn btn-success" %>
+              </div>
+            </div>
           </li>
         </ul>
       <% end %>
