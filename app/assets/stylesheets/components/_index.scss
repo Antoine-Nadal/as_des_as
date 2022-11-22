@@ -45,6 +45,10 @@
   padding: 16px;
 }
 
+.card-map {
+  position: sticky;
+  top: 100px;
+}
 
 .mapping {
   width: 95%;
@@ -60,4 +64,5 @@
   border-radius: 5px;
   box-shadow: 0px 0px 6px 1px #17407C21;
   // position: fixed;
+
 }
