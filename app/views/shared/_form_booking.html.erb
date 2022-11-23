@@ -4,8 +4,8 @@
     <%# Prénom: <%= @gaming_session.user.first_name %>
     <%# Nom: <%= @gaming_session.user.last_name %>
     <div class="input">
-      <%= f.input :start_date :input_html => {class: 'response-project'}%>
-      <%= f.input :end_date :input_html => {class: 'response-project'}%>
+      <%= f.input :start_date, :input_html => {class: 'response-project'}%>
+      <%= f.input :end_date, :input_html => {class: 'response-project'}%>
     </div>
     <div class="submit">
       <%= f.button :submit, class: "button-orange" %>
