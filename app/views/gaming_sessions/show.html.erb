@@ -1,5 +1,13 @@
 <div class="container">
+<div class="carrousel">
+  <% @gaming_session.photos.each do |photo| %>
+      <div class="carrous" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>')">
+  <% end %>
+</div>
+
+</div>
   <div class="row">
+
   <div class="col-6">
     <div class="card-creation-title">
       <h1 class= "t1">Détails du bar à jeu:</h1>
@@ -24,8 +32,6 @@
 </div>
 
 <br>
-<% @gaming_session.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+
 <br>
 <br>
