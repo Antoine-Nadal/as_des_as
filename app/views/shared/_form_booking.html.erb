@@ -3,8 +3,12 @@
   <%= simple_form_for [@gaming_session, @booking] do |f| %>
     <%# Prénom: <%= @gaming_session.user.first_name %>
     <%# Nom: <%= @gaming_session.user.last_name %>
-    <%= f.input :start_date%>
-    <%= f.input :end_date%>
-    <%= f.submit %>
+    <div class="input">
+      <%= f.input :start_date :input_html => {class: 'response-project'}%>
+      <%= f.input :end_date :input_html => {class: 'response-project'}%>
+    </div>
+    <div class="submit">
+      <%= f.button :submit, class: "button-orange" %>
+    </div>
   <% end %>
 </div>

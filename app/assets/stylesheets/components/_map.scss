@@ -1,16 +1,46 @@
+@import "pages/create_bar";
+
+
+.mapboxgl{
+  position: absolute;
+//  width: fit-content;
+}
+
 .mapboxgl-popup {
-  max-width: 200px;
+  width: auto;
+  border: 1px solid #19407D;
+  border-radius: 35px;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
+  color: #19407D;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  // line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 .mapboxgl-ctrl-geocoder {
-  max-width: none;
-  width: 100%;
-  border: 1px solid lightgrey;
+  background: #FFFFFF;
+  border: 1px solid #19407D;
+  border-radius: 35px;
+  color:19407D;
   box-shadow: none;
-  background-color: transparent;
 }
+
+
+// .forming{
+//   box-sizing: border-box;
+//   border: 1px solid #19407D;
+//   padding: 20px;
+//   // height: 694px;
+//   // width: 803px;
+//   // left: 825px;
+//   // top: 269px;
+//   border-radius: 35px;
+  // box-shadow: 0px 4px 4px 0px #00000040;
+// }
