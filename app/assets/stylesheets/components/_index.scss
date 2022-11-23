@@ -70,7 +70,7 @@
 .card-map {
   position: sticky;
   top: 100px;
-  bottom: 100px;
+  // height: 65%;
 }
 
 .mapping {
@@ -82,6 +82,7 @@
 .mapping img {
   height: 80%;
   width: 80%;
+
   background-position: center;
   object-fit: cover;
   border-radius: 5px;
@@ -89,4 +90,4 @@
   // position: fixed;
   position: sticky;
   bottom: 100px;
-}
+
