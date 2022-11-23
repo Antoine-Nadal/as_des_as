@@ -1,5 +1,5 @@
 <%# <div class="sticky-top"> %>
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="position:fixed; z-index: 10;">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="position:fixed; z-index: 10; margin-bottom 100px">
     <div class="container-fluid">
       <%= link_to "/", class: "navbar-brand" do %>
         <%= image_tag "As des as0.png", alt: "As des as" %>
@@ -11,17 +11,13 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
-        <li>
-          <%= link_to "CRÉER MON GAME BAR", new_gaming_session_path, class: "button-blue", style:"color:white"%>
-          </li>
           <% if user_signed_in? %>
-            <li class="button-blue">
-              <%= link_to "Home", "/", class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Messages", "#", class: "nav-link" %>
-            </li>
-            <li class="nav-item dropdown">
+            <li class="btn-nav " >
+              <%= link_to "Ajouter mon bar à jeu", new_gaming_session_path, class: "button-blue"%>
+              <%= link_to "Messages", "#", class: "button-blue" %>
+            <%# <li class="button-blue mx-3"> %>
+              <%# <%= link_to "Home", "/", class: "button-blue" %>
+            <%# </li> %>
               <% if current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
@@ -33,13 +29,13 @@
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>
             </li>
-          <% else %>
+            <% else %>
             <ul>
-            <li>
-              <%= link_to new_user_session_path do %>
-                <i class=" fa-solid fa-bars"></i>
-              <% end %>
-            </li>
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <i class=" fa-solid fa-bars"></i>
+                <% end %>
+              </li>
             </ul>
           <% end %>
         </ul>
