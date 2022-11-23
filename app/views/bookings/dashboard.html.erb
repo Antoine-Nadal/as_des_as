@@ -30,10 +30,10 @@
             <% if demand.status.nil? %>
               <div class="d-flex column-align">
                 <div class="m-2">
-                  <%= link_to "Accepter", accept_booking_path(demand), class: "btn btn-success"  %>
+                 <p><%= link_to "Accepter", accept_booking_path(demand), class: "button-blue"  %></p>
                 </div>
                 <div class="m-2">
-                  <%= link_to 'Refuser', refuse_booking_path(demand), class: "btn btn-danger" %>
+                 <p><%= link_to 'Refuser', refuse_booking_path(demand), class: "button-orange" %></p>
                 </div>
               </div>
             <% elsif demand.status == false %>
