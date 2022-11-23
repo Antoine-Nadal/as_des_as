@@ -4,6 +4,7 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "footer";
+@import "button_orange";
 
 
 .card-session {
@@ -12,16 +13,19 @@
   background: white;
   box-shadow: 0px 0px 6px 1px #17407C21;
   display: flex;
-  align-items: center;
+  // align-items: center;
   border-radius: 5px;
-  padding: 0;
+  // padding: 0;
   margin-bottom: 1em;
+  padding-left: 0;
+  position:relative;
+
 
 }
 
 .card-session img {
   height: 100%;
-  width: 120px;
+  width: 140px;
   object-fit: cover;
   background-color: gray;
 }
@@ -31,6 +35,9 @@
   font-weight: bold;
   margin: 0;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+
 }
 
 .card-session p {
@@ -39,10 +46,25 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  display: flex;
+
 }
 
 .card-session .card-session-infos {
   padding: 16px;
+  display: block;
+  align-items: center;
+
+
+}
+
+.card-session .btn {
+  position: absolute;
+  bottom:0;
+  right:0;
+  // bottom: 10px;
+  // right: 10px
+  // margin-bottom: 10px;
 }
 
 .card-map {
@@ -58,12 +80,14 @@
 }
 
 .mapping img {
-  height: 400px;
-  width: 95%;
+  height: 80%;
+  width: 80%;
+
   background-position: center;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0px 0px 6px 1px #17407C21;
   // position: fixed;
+  position: sticky;
+  bottom: 100px;
 
-}
