@@ -5,7 +5,7 @@
   left: 1161px;
   top: 655px;
   border-radius: 70px;
-  padding: 11px 30px 11px 30px;
+  padding: 11px 20px 11px 20px;
   // position: absolute;
   // width: 238px;
   // height: 20px;
@@ -23,4 +23,16 @@
   order: 0;
   flex-grow: 0;
   text-decoration: none;
+  margin-right: 5px;
+
+      &:hover{
+  background: #C2FDE0;
+  color:#19407D;
+  animation-timing-function: ease-out;
+  animation-duration: 300ms;
+      }
 }
+
+// While hovering
+// Scroll to: "Button 2 state 2";
+// Animate: Animate;

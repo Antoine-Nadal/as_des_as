@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 100px;">
+<div class="container">
   <div class="row ">
     <div class="col-6" >
       <div class="card-map">
@@ -11,9 +11,9 @@
           </div>
         </div>
     </div>
-    <div class="col-6 align-items-end">
+    <div class="col-6 ">
       <% @gaming_sessions.each do |gaming_session| %>
-        <div class="row align-items-end">
+        <div class="row">
             <div class="card-session">
                 <%=image_tag "bar_a_jeu_2", alt:"photo random de bar à jeu"%>
                 <div class="card-session-infos"  >
@@ -21,6 +21,13 @@
                   <p> <%= gaming_session.address %></p>
                   <p> Nombre de participants :<strong>  <%= gaming_session.number_of_participants %> </strong> </p>
                   <p> <%= gaming_session.description %> </p>
+                </div>
+                <div class="btn">
+                  <div class="button-orange">
+                    <%= link_to "Réserver", new_gaming_session_path, class: "button-orange"%>
+                  </div>
+                  <%# <%= link_to "Réserver", class: "button-orange"%>
+                  <%# mettre le lien vers le booking %>
                 </div>
             </div>
         </div>
