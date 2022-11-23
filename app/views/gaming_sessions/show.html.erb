@@ -1,34 +1,37 @@
 <div class="container">
-<div class="carrousel">
-  <% @gaming_session.photos.each do |photo| %>
-      <div class="carrous" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>')">
-  <% end %>
-</div>
 
-</div>
-  <div class="row">
-
-  <div class="col-6">
-    <div class="card-creation-title">
-      <h1 class= "t1">Détails du bar à jeu:</h1>
-      <h1 class= "t2"> <%= @gaming_session.name.capitalize %> </h1>
-      <br>
-      <h3>Description :</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio quia veniam nesciunt officiis. Autem incidunt optio in. Sit aperiam error qui labore voluptate quis, id architecto earum blanditiis itaque?
-      Officiis laboriosam labore quaerat repellat tempore? Autem aliquam, quaerat, architecto ipsa, quae voluptates voluptate laudantium maxime accusamus ipsum porro illum ut eveniet eius in. Consequatur nulla veritatis nobis veniam iure?</p>
-      <% if policy(@gaming_session).edit? %>
-        <p><%= link_to "updater votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %></p>
-      <% end %>
-        <%= button_to "délister le bar à jeu", @gaming_session, class: "button-orange", method: :delete if policy(@gaming_session).destroy? %>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @gaming_session.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%="active" if index == 0 %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>'); height: 200px;"></div>
+        <% end %>
     </div>
   </div>
-  <div class="col-6">
-      <% unless @gaming_session.user == current_user %>
-        <div class="forming">
-          <%= render "shared/form_booking" %>
-        </div>
-      <% end %>
-  </div>
+
+  <div class="row">
+
+    <div class="col-6">
+      <div class="card-creation-title">
+        <h1 class= "t1">Détails du bar à jeu:</h1>
+        <h1 class= "t2"> <%= @gaming_session.name.capitalize %> </h1>
+        <br>
+        <h3>Description :</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio quia veniam nesciunt officiis. Autem incidunt optio in. Sit aperiam error qui labore voluptate quis, id architecto earum blanditiis itaque?
+        Officiis laboriosam labore quaerat repellat tempore? Autem aliquam, quaerat, architecto ipsa, quae voluptates voluptate laudantium maxime accusamus ipsum porro illum ut eveniet eius in. Consequatur nulla veritatis nobis veniam iure?</p>
+        <% if policy(@gaming_session).edit? %>
+          <p><%= link_to "updater votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %></p>
+        <% end %>
+          <%= button_to "délister le bar à jeu", @gaming_session, class: "button-orange", method: :delete if policy(@gaming_session).destroy? %>
+      </div>
+    </div>
+    <div class="col-6">
+        <% unless @gaming_session.user == current_user %>
+          <div class="forming">
+            <%= render "shared/form_booking" %>
+          </div>
+        <% end %>
+    </div>
+
 </div>
 
 <br>
