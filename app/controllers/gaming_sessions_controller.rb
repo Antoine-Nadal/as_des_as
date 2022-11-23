@@ -4,6 +4,13 @@ class GamingSessionsController < ApplicationController
 
   def index
     @gaming_sessions = policy_scope(GamingSession)
+    @markers = @gaming_sessions.geocoded.map do |gaming_session|
+      {
+        lat: gaming_session.latitude,
+        lng: gaming_session.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {gaming_session: gaming_session})
+      }
+    end
   end
 
   def show
