@@ -4,9 +4,12 @@
       <div class="card-map">
         <div class="mapping">
           <h2>Découvrez votre bar à jeu favori, et venez découvrir pleins de nouveaux jeux avec vos amis!</h2>
-          <%= image_tag "map.png", alt: "map" %>
+          <div style="width: 100%; height: 600px;"
+            data-controller="map"
+            data-map-markers-value="<%= @markers.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+          </div>
         </div>
-      </div>
     </div>
     <div class="col-6 align-items-end">
       <% @gaming_sessions.each do |gaming_session| %>
