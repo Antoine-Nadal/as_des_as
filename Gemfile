@@ -76,7 +76,13 @@ group :development do
 end
 
 gem "dotenv-rails"
+
+# For image upload
 gem "cloudinary"
+
+# For geocoding on Mapbox
+gem "geocoder"
+
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
