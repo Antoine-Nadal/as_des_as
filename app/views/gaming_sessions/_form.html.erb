@@ -3,7 +3,7 @@
   <div class="input">
       <%= f.input :name, :input_html => {class: 'response-project'}%>
       <%= f.input :date, :input_html => {class: 'response-project'}%>
-      <%= f.input :address, 
+      <%= f.input :address,
         input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
         wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
       %>
