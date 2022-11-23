@@ -2,19 +2,20 @@
   <%= simple_form_for(gaming_session) do |f| %>
   <div class="input">
       <%= f.input :name, :input_html => {class: 'response-project'}%>
-      <%= f.input :date, :input_html => {class: 'response-project'}%>
       <%= f.input :address,
         input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
         wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
       %>
-      <%= f.input :game, :input_html => {class: 'response-project'}%>
       <%= f.input :number_of_participants, :input_html => {class: 'response-project'}%>
       <%= f.input :description, :input_html => {class: 'response-project'}%>
       <%= f.input :price, :input_html => {class: 'response-project'}%>
-      <%= f.input :photos, as: :file, input_html: { multiple: true } , :input_html => {class: 'response-project'}%>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <div class="submit">
         <%= f.button :submit, class: "button-orange" %>
       </div>
     </div>
   <% end %>
 </div>
+
+
+<%# , :input_html => {class: 'response-project'} %>

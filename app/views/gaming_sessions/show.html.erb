@@ -9,7 +9,9 @@
 <br>
 
 <% if policy(@gaming_session).edit? %>
-  <%= link_to "Edit this gaming session", edit_gaming_session_path(@gaming_session) %> |
+  <%= link_to "updater votre bar à jeu", edit_gaming_session_path(@gaming_session) %> |
 <% end %>
-<%= button_to "Destroy this gaming session", @gaming_session, method: :delete if policy(@gaming_session).destroy? %>
+<%= button_to "délister le bar à jeu", @gaming_session, method: :delete if policy(@gaming_session).destroy? %>
+<% unless @gaming_session.user == current_user %>
 <%= render "shared/form_booking" %>
+<% end %>
