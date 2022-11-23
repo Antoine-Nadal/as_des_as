@@ -16,6 +16,7 @@
   border-radius: 5px;
   padding: 0;
   margin-bottom: 1em;
+
 }
 
 .card-session img {
@@ -29,6 +30,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-session p {
@@ -43,16 +45,25 @@
   padding: 16px;
 }
 
+.card-map {
+  position: sticky;
+  top: 100px;
+  // height: 65%;
+}
 
-.card-map h2 {
-  width: 40%;
+.mapping {
+  width: 95%;
+  position: sticky;
+  top: 100px;
 }
 
 .mapping img {
-  height: 80%;
-  width: 40%;
+  height: 400px;
+  width: 95%;
   background-position: center;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0px 0px 6px 1px #17407C21;
+  // position: fixed;
+
 }

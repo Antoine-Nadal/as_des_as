@@ -1,16 +1,26 @@
 .button-blue {
   background: #19407D;
   height: 42px;
-  width: 144px;
+  // width: 144px;
   left: 1161px;
   top: 655px;
   border-radius: 70px;
   padding: 11px 30px 11px 30px;
+  // position: absolute;
+  // width: 238px;
+  // height: 20px;
+  // left: 1211px;
+  // top: 55px;
+  justify-content: center;
+  font-family: 'Josefin Sans';
+  font-style: light;
+  // font-weight: 200px;
+  font-size: 14px;
+  line-height: 25px;
+  color: #FFFFFF;
 
-  // While hovering
-// Scroll to: "Button 2 state 2";
-// Animate: Animate;
-// animation-timing-function: ease-out;
-// animation-duration: 300ms;
-
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  text-decoration: none;
 }
