@@ -36,7 +36,6 @@ class GamingSessionsController < ApplicationController
 
   def edit
     authorize @gaming_session
-
   end
 
   def update

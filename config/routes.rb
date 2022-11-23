@@ -5,9 +5,17 @@ Rails.application.routes.draw do
   resources :gaming_sessions do
     resources :bookings, only: %i[create]
   end
-  get 'dashboard', to: 'pages#dashboard'
+  resources :bookings, only: [] do
+    member do
+      get :accept
+      get :refuse
+    end
+  end
+  # get 'dashboard', to: 'pages#dashboard'
+  get 'dashboard', to: 'bookings#dashboard'
+  # patch 'dashboard/:id', to: 'bookings#accept'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
   # root "gamesessions#index"
 end

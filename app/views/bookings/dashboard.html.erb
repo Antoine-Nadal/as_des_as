@@ -1,0 +1,49 @@
+<br><br><br>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6">
+    <h1>Mes réservations</h1>
+      <% @my_bookings.each do |booking| %>
+        <ul>
+          <li>
+              <%= booking.gaming_session.name %> : du <%= booking.start_date %> au <%= booking.end_date %>
+              <% if booking.status == nil %>
+                <span class="text-secondary"> Validation en attente...</span>
+              <% elsif booking.status == false %>
+                <span class="text-danger"> Refusé </span>
+              <% else %>
+                <span class="text-success"> Réservé </span>
+              <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  <br>
+    <div class="col-6">
+     <h1>Mes gaming sessions</h1>
+      <% @my_demands.each do |demand| %>
+        <ul>
+          <li>
+            Demandeur   : <%= demand.user.first_name %> <%= demand.user.last_name %> <br>
+            Réservation : <%= demand.gaming_session.name %> : du <%= demand.start_date %> au <%= demand.end_date %> <br>
+            <% if demand.status.nil? %>
+              <div class="d-flex column-align">
+                <div class="m-2">
+                  <%= link_to "Accepter", accept_booking_path(demand), class: "btn btn-success"  %>
+                </div>
+                <div class="m-2">
+                  <%= link_to 'Refuser', refuse_booking_path(demand), class: "btn btn-danger" %>
+                </div>
+              </div>
+            <% elsif demand.status == false %>
+              <span class="text-danger">Vous avez refusé cette réservation</span>
+            <% else %>
+              <span class="text-success">Vous avez accepté cette réservation</span>
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

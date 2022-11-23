@@ -6,6 +6,18 @@ class BookingPolicy < ApplicationPolicy
     # end
   end
 
+  def dashboard?
+    true
+  end
+
+  def accept?
+    record.gaming_session.user == user
+  end
+
+  def refuse?
+    record.gaming_session.user == user
+  end
+
   def create?
     true
   end
