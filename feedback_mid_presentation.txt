@@ -1,0 +1,14 @@
+Pich parfait: soit passer à deux persos. Soit un seul eprso qui réserve un bar, puis crée le sien, pusi reviens sur son dashboard pour voir que sa demande a été acceptée.
+Bravo pour le design!
+Seed a améliorer: surtout images et description
+Boutons navbar et cards ont le même poids: à modifier
+Refaire le edit
+retirer le "description" dans la show
+Visibilité des boutons à revoir pour améliorer l'accessibilité (améliorer le contraste, agrandir la police)
+Limiter longueur du texte si description longueur
+Ajouter des infos dans la description des jeux (jeux, age, bouffe, avec des petits pictos pour rendre plus sympa)
+Attention au franglais
+Pas de discussion entre demandeur et accepteur
+gem flat_picker -> voir tuto sur librairie du wagon
+Ajouter total price qui se met à jour tt seul (ou direct via html avec "as date html file true?")
+Target pitch: 3 minutes
