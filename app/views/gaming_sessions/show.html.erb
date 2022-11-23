@@ -12,15 +12,14 @@
         <p><%= link_to "updater votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %></p>
       <% end %>
         <%= button_to "délister le bar à jeu", @gaming_session, class: "button-orange", method: :delete if policy(@gaming_session).destroy? %>
-        <% unless @gaming_session.user == current_user %>
-        <%= render "shared/form_booking" %>
-      <% end %>
     </div>
   </div>
   <div class="col-6">
-    <div class="forming">
-      <%= render "shared/form_booking" %>
-    </div>
+      <% unless @gaming_session.user == current_user %>
+        <div class="forming">
+          <%= render "shared/form_booking" %>
+        </div>
+      <% end %>
   </div>
 </div>
 
