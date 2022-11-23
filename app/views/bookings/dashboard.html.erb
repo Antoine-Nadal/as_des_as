@@ -9,6 +9,7 @@
           <li>
               <%= booking.gaming_session.name %> : du <%= booking.start_date %> au <%= booking.end_date %>
               <% if booking.status == nil %>
+              <br>
                 <span class="text-secondary"> Validation en attente...</span>
               <% elsif booking.status == false %>
                 <span class="text-danger"> Refusé </span>
@@ -21,7 +22,7 @@
     </div>
   <br>
     <div class="col-6">
-     <h1>Mes gaming sessions</h1>
+     <h1>Mes bars à jeux</h1>
       <% @my_demands.each do |demand| %>
         <ul>
           <li>
