@@ -27,9 +27,16 @@
                   <p> <%= gaming_session.address %></p>
                   <p> Capacité <strong> : <%= gaming_session.number_of_participants %> personnes </strong> </p>
                   <p> <%= gaming_session.description %> </p>
-                  <p> Food :<strong>  <%= gaming_session.food %> </strong> </p>
-                  <p> Drink :<strong>  <%= gaming_session.drink %> </strong> </p>
                   <p> Type de jeu :<strong>  <%= gaming_session.game_type %> </strong> </p>
+                  <div class="icons">
+                  <i class="fa-solid fa-dice-six"></i>
+                  <% if gaming_session.food? %> </strong>
+                    <i class="fa-solid fa-utensils"></i>
+                  <% end %>
+                  <% if gaming_session.drink? %>
+                    <i class="fa-solid fa-martini-glass"></i>
+                  <% end %>
+                  </div>
                 </div>
                 <div class="btn">
                   <div class="button-orange">

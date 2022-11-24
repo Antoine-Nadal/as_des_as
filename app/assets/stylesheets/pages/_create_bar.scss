@@ -1,3 +1,5 @@
+@import "components/icons";
+
 .carousel-inner{
   background-size: cover;
   background-position: center;
@@ -5,6 +7,9 @@
   width: 100%;
   border-radius: 35px;
   box-shadow: 0px 4px 4px 0px #00000040;  margin-bottom: 50px;
+    .carousel-item{
+    background-size: cover;
+    }
 }
 
 .bann-bar{
@@ -31,12 +36,20 @@ text-align: center;
   overflow: hidden;
 }
 
+.card-creation-title .icons {
+  margin-bottom: 30px;
+  margin-top: -30px;
+  align-items: center;
+  display: flex;
+  justify-content: start;
+}
+
 .card-creation-title img{
   position: sticky;
   width: 80vh;
   padding-right: 30px;
   mix-blend-mode: multiply;
-  text-align: centergiy ;
+  text-align: center ;
 
 }
 
