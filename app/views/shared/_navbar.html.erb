@@ -14,7 +14,7 @@
           <% if user_signed_in? %>
             <li class="btn-nav " >
               <%= link_to "Ajouter mon bar à jeu", new_gaming_session_path, class: "button-blue"%>
-              <%= link_to "Log out", destroy_user_session_path, class: "button-blue", data: {turbo_method: :delete} %>
+              <%= link_to "Mon espace", dashboard_path, class: "button-blue" %>
               <%# <%= link_to "Messages", "#", class: "button-blue" %> %>
             <%# <li class="button-blue mx-3"> %>
               <%# <%= link_to "Home", "/", class: "button-blue" %>
@@ -25,9 +25,9 @@
                 <%= image_tag "default_avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%=current_user.first_name %> <%=current_user.last_name %>
-                <%= link_to "Mes réservations", dashboard_path, class: "dropdown-item" %>
-
+                <h3><%=current_user.first_name %> <%=current_user.last_name %></h3>
+                <p><%= link_to "Mon espace", dashboard_path, class: "dropdown-item" %></p>
+                <p><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %></p>
               </div>
             </li>
             <% else %>
