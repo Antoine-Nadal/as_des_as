@@ -1,21 +1,23 @@
 <div class="container">
-  <h1> 🎲 Espace de <%= current_user.first_name %> <%= current_user.last_name %> </h1>
-    <div class="container">
+ <%= render 'shared/banner' %>
+    <div class="container forming">
       <h2>Mes réservations</h2>
       <p> <strong> - Etat de mes demandes de réservation - </strong> </p>
       <% if @my_bookings.empty? %>
-        <p>Vous n'avez fait aucune demande de réservation pour l'instant !</p>
+        <p class="forming">Vous n'avez fait aucune demande de réservation pour l'instant !</p>
       <% else %>
         <% @my_bookings.each do |booking| %>
-          <ul>
+          <ul class="list-unstyled forming">
             <li>
                 <%= booking.gaming_session.name %> : du <%= booking.start_date %> au <%= booking.end_date %>
                 <% if booking.status == nil %>
                 <br>
                   <span class="text-secondary"> Validation en attente...</span>
                 <% elsif booking.status == false %>
+                <br>
                   <span class="text-danger"> Refusé </span>
                 <% else %>
+                <br>
                   <span class="text-success"> Réservé </span>
                 <% end %>
             </li>
@@ -23,36 +25,36 @@
         <% end %>
       <% end %>
     </div>
-    <div class="container">
-      <% unless current_user.gaming_session_ids.empty? %>
-        <h2> Mon bar à jeu </h2>
-        <p> <strong> - Gestion des réservations de mon bar à jeux - </strong> </p>
-        <% if @my_demands.empty? %>
-          <p>Quelqu'un viendra surement réserver votre magnifique bar prochainement !</p>
-        <% else %>
-          <% @my_demands.each do |demand| %>
-            <ul>
-              <li>
-                Demandeur   : <%= demand.user.first_name %> <%= demand.user.last_name %> <br>
-                Réservation : <%= demand.gaming_session.name %> : du <%= demand.start_date %> au <%= demand.end_date %> <br>
-                <% if demand.status.nil? %>
-                  <div class="d-flex column-align">
-                    <div class="m-2">
-                    <p><%= link_to "Accepter", accept_booking_path(demand), class: "button-blue"  %></p>
-                    </div>
-                    <div class="m-2">
-                    <p><%= link_to 'Refuser', refuse_booking_path(demand), class: "button-orange" %></p>
-                    </div>
+    <% unless current_user.gaming_session_ids.empty? %>
+    <div class="container forming">
+      <h2> Mon bar à jeu </h2>
+      <p> <strong> - Gestion des réservations de mon bar à jeux - </strong> </p>
+      <% if @my_demands.empty? %>
+        <p>Quelqu'un viendra surement réserver votre magnifique bar prochainement !</p>
+      <% else %>
+        <% @my_demands.each do |demand| %>
+          <ul class="list-unstyled forming">
+            <li>
+              Demandeur   : <%= demand.user.first_name %> <%= demand.user.last_name %> <br>
+              Réservation : <%= demand.gaming_session.name %> : du <%= demand.start_date %> au <%= demand.end_date %> <br>
+              <% if demand.status.nil? %>
+                <div class="d-flex column-align">
+                  <div class="m-2">
+                  <p><%= link_to "Accepter", accept_booking_path(demand), class: "button-blue"  %></p>
                   </div>
-                <% elsif demand.status == false %>
-                  <span class="text-danger">Vous avez refusé cette réservation</span>
-                <% else %>
-                  <span class="text-success">Vous avez accepté cette réservation</span>
-                <% end %>
-              </li>
-            </ul>
-          <% end %>
+                  <div class="m-2">
+                  <p><%= link_to 'Refuser', refuse_booking_path(demand), class: "button-orange" %></p>
+                  </div>
+                </div>
+              <% elsif demand.status == false %>
+                <span class="text-danger">Vous avez refusé cette réservation</span>
+              <% else %>
+                <span class="text-success">Vous avez accepté cette réservation</span>
+              <% end %>
+            </li>
+          </ul>
         <% end %>
       <% end %>
     </div>
+    <% end %>
 </div>
