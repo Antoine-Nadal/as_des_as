@@ -8,7 +8,8 @@ class GamingSessionsController < ApplicationController
       {
         lat: gaming_session.latitude,
         lng: gaming_session.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {gaming_session: gaming_session})
+        info_window: render_to_string(partial: "info_window", locals: {gaming_session: gaming_session}),
+        image_url: helpers.asset_url("location.png")
       }
     end
   end

@@ -17,8 +17,16 @@
 
 .card-creation-title{
   position: sticky;
-  top: 200px;
   padding-right: 30px;
+}
+
+.card-creation-title img{
+  position: sticky;
+  width: 80vh;
+  padding-right: 30px;
+  mix-blend-mode: multiply;
+  text-align: center;
+
 }
 
 .card-creation-title h3 {
