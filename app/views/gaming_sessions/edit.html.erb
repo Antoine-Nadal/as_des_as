@@ -1,2 +1,17 @@
-<h1>éditer mon bar à jeu</h1>
-<%= render "form", gaming_session: @gaming_session %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card-creation-title">
+        <br>
+        <h1 class="t1">Editer mon bar à jeu</h1>
+        <br>
+        <h1 class="t2"><%= @gaming_session.name %></h1>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="forming">
+        <%= render "form_edit", gaming_session: @gaming_session %>
+      </div>
+    </div>
+  </div>
+</div>
