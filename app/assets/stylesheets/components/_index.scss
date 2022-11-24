@@ -6,7 +6,19 @@
 @import "footer";
 @import "map";
 @import "button_orange";
+@import "config/fonts";
 
+
+.title1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 35px;
+
+}
 
 .card-session {
   overflow: hidden;
@@ -26,15 +38,14 @@
 
 .card-session img {
   height: 100%;
-  width: 140px;
+  width: 160px;
   object-fit: cover;
   background-color: gray;
 }
 
 .card-session h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  margin: 0;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -47,9 +58,8 @@
 }
 
 .card-session p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
   display: flex;
@@ -68,6 +78,7 @@
   position: absolute;
   bottom:0;
   right:0;
+  margin-bottom: 10px;
   // bottom: 10px;
   // right: 10px
   // margin-bottom: 10px;

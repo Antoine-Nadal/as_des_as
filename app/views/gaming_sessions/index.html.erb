@@ -1,9 +1,14 @@
 <div class="container">
+  <div class="title1">
+      <h1 style='100vh'>DÉCOUVREZ VOTRE BAR <br>À JEU FAVORI</h1>
+  </div>
+  <div class="subtitle">
+      <h3 style='100vh'>Venez découvrir pleins de nouveaux jeux avec vos amis!</h3>
+  </div>
   <div class="row ">
     <div class="col-6" >
       <div class="card-map">
         <div class="mapping">
-          <h2>Découvrez votre bar à jeu favori, et venez découvrir pleins de nouveaux jeux avec vos amis!</h2>
           <div style="width: 100%; height: 600px;"
             data-controller="map"
             data-map-markers-value="<%= @markers.to_json %>"
@@ -17,9 +22,9 @@
             <div class="card-session">
                 <%=image_tag "bar_a_jeu_2.jpg", alt:"photo random de bar à jeu"%>
                 <div class="card-session-infos"  >
-                  <h2><%= link_to gaming_session.name, gaming_session_path(gaming_session)%></h2>
+                  <h2><%= link_to gaming_session.name.titleize, gaming_session_path(gaming_session)%></h2>
                   <p> <%= gaming_session.address %></p>
-                  <p> Nombre de participants :<strong>  <%= gaming_session.number_of_participants %> </strong> </p>
+                  <p> Capacité <strong> : <%= gaming_session.number_of_participants %> personnes </strong> </p>
                   <p> <%= gaming_session.description %> </p>
                   <p> Food :<strong>  <%= gaming_session.food %> </strong> </p>
                   <p> Drink :<strong>  <%= gaming_session.drink %> </strong> </p>
