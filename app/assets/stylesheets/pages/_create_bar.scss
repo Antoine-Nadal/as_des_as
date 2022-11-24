@@ -1,4 +1,5 @@
 @import "components/icons";
+@import "components/button_orange";
 
 .carousel-inner{
   background-size: cover;
@@ -27,6 +28,7 @@ text-align: center;
 
   }
 }
+
 .card-creation-title{
   position: sticky;
   padding-right: 30px;
@@ -41,7 +43,7 @@ text-align: center;
   margin-top: -30px;
   align-items: center;
   display: flex;
-  justify-content: start;
+  justify-content: center;
 }
 
 .card-creation-title img{
@@ -99,4 +101,15 @@ text-align: center;
  justify-content: center;
  align-items: center;
  margin-top: 30px;
+}
+
+.user-btn{
+  text-align: end;
+  margin-top: 30%;
+  .user {
+    text-align: center;
+    margin: 30px;
+    border: none;
+
+  }
 }
