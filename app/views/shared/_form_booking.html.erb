@@ -1,20 +1,18 @@
 <div class="container mt-3" data-controller="price">
-  <h2>Réservez un bar à jeu:</h2>
+  <h2>Réservez un bar à jeu</h2>
   <div class="row">
     <div class="col-6 d-flex">
-      <p>Par jour<p data-price-target="unitPrice"> : <%= price %>€</p>
+      <p>Par jour : <p data-price-target="unitPrice"> <%= price %></p></p><p>€</p>
     </div>
     <div class="col-6 d-flex">
-      <p>Total<p data-price-target="price"> : <%= price %>€</p></p>
+      <p>Total : <p data-price-target="price"> <%= price %></p></p><p>€</p>
     </div>
   </div>
   <div>
-    <%= simple_form_for [@gaming_session, @booking] do |f| %>
-      <%# Prénom: <%= @gaming_session.user.first_name %>
-      <%# Nom: <%= @gaming_session.user.last_name %>
+    <%= simple_form_for [@gaming_session, @booking], data: { controller: 'flatpickr' } do |f| %>
       <div class="input" data-action="change->price#displayPrice">
-        <%= f.input :start_date, label:"date de début",as: :string, :input_html => {class: 'response-project', data: { target: "price.startDate" }}%>
-        <%= f.input :end_date, label:"date de fin", as: :string, :input_html => {class: 'response-project', data: { target: "price.endDate" }}%>
+        <%= f.input :start_date, label:"date de début",as: :string, :input_html => {class: 'response-project', data: { target: "price.startDate", flatpickr_target: "startDate" }}%>
+        <%= f.input :end_date, label:"date de fin", as: :string, :input_html => {class: 'response-project', data: { target: "price.endDate",  flatpickr_target: "endDate" }}%>
       </div>
       <div class="submit">
         <%= f.button :submit, 'réserver', class: "button-orange" %>
