@@ -1,16 +1,23 @@
 <div class="container">
+  <div class="bann-bar">
+    <%=image_tag "show-bar.png", alt:"show-bar"%>
+    <h2 class= "t2"> <%= @gaming_session.name.capitalize %> </h2>
+  </div>
 
- <% @gaming_session.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 
   <div class="row">
 
     <div class="col-6">
       <div class="card-creation-title">
-        <h1 class= "t2"> <%= @gaming_session.name.capitalize %> </h1>
-        <br>
-        <h3>Description :</h3>
+
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% @gaming_session.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item <%="active" if index == 0 %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, height: 300, width: 400, crop: :fill %>'); height: 200px;"></div>
+            <% end %>
+        </div>
+      </div>
+
         <p> <%= @gaming_session.description %> </p>
         <p>Food: <%= @gaming_session.food %></p>
         <p>Drink: <%= @gaming_session.drink %></p>
@@ -22,12 +29,12 @@
       </div>
 
     </div>
-  </div>
-  <div class="col-6">
-      <% unless @gaming_session.user == current_user %>
-        <div class="forming">
-          <%= render "shared/form_booking", price: @gaming_session.price %>
-        </div>
-      <% end %>
+    <div class="col-6">
+        <% unless @gaming_session.user == current_user %>
+          <div class="forming">
+            <%= render "shared/form_booking", price: @gaming_session.price %>
+          </div>
+        <% end %>
+    </div>
   </div>
 </div>
