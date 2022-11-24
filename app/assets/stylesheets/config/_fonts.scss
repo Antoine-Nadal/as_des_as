@@ -1,50 +1,62 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+@font-face {
+  font-family: "Roboto-Black";
+  src: font-url('Roboto-Black.eot');
+  src: font-url('Roboto-Black.eot?#iefix') format('embedded-opentype'),
+       font-url('Roboto-Black.woff') format('woff'),
+       font-url('Roboto-Black.ttf') format('truetype')
+}
+$my-font: "Roboto-Black";
+
+@font-face {
+  font-family: "Roboto-Light";
+  src: font-url('Roboto-Light.eot');
+  src: font-url('Roboto-Light.eot?#iefix') format('embedded-opentype'),
+       font-url('Roboto-Light.woff') format('woff'),
+       font-url('Roboto-Light.ttf') format('truetype')
+}
+$my-font: "Roboto-Light";
 
 h1 {
-  font-family: "Comfortaa", sans-serif;
-  color: #19407D;
-  font-size: 56px;
+  font-family: 'Roboto-Black', sans-serif;
+  color:#FEA680;
+  font-size: 90px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
 }
 
 h2 {
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Roboto-Light", sans-serif;
   color: #19407D;
-  font-size: 46px;
-  font-weight: bold;
+  font-size: 45px;
+  // font-weight: bold;
   text-decoration: none;
 }
 
 h3 {
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Roboto-Light", sans-serif;
   color: #19407D;
-  font-weight: bold;
-  font-size: 33px;
+  // font-weight: bold;
+  font-size: 32px;
   text-decoration: none;
 }
 
 p {
   font-family: 'Josefin Sans', sans-serif;
-font-size: 20px;
-font-weight: 300;
-// line-height: 24px;
-letter-spacing: 0em;
-text-align: left;
+  color: #19407D;
+  font-size: 18px;
+  font-weight: 300;
+  // line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
 }
 
 

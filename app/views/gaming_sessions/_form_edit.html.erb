@@ -8,6 +8,9 @@
       %>
       <%= f.input :number_of_participants, :input_html => {class: 'response-project'}%>
       <%= f.input :description, :input_html => {class: 'response-project'}%>
+      <%= f.input :game_type,  collection: GamingSession::GAMES_TYPES, :input_html => {class: 'response-project'} %>
+      <%= f.input :food, as: :select, collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
+      <%= f.input :drink, as: :select, collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
       <%= f.input :price, :input_html => {class: 'response-project'}%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <div class="submit">
