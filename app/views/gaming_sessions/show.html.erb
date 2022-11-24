@@ -4,9 +4,7 @@
     <h2 class= "t2"> <%= @gaming_session.name.capitalize %> </h2>
   </div>
 
-
   <div class="row">
-
     <div class="col-6">
       <div class="card-creation-title">
 
@@ -31,23 +29,23 @@
          <p> <strong>Type de jeu : </strong>  <%= @gaming_session.game_type %> </p>
       </div>
     </div>
-
     <div class="col-6">
-      <div class="user-btn">
-        <% if policy(@gaming_session).edit? %>
-          <div class="user">
-            <%= link_to "Modifier votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %>
-          <% end %>
-          </div>
-          <div class="user">
-            <%= link_to "Délister le bar à jeu", @gaming_session, class: "button-orange", method: :delete if policy(@gaming_session).destroy? %>
-          </div>
-        <% unless @gaming_session.user == current_user %>
-          <div class="forming">
-            <%= render "shared/form_booking", price: @gaming_session.price %>
-          </div>
-        <% end %>
-      </div>
+      <% if current_user == @gaming_session.user %>
+          <% if policy(@gaming_session).edit? %>
+          <div class="user-btn">
+            <div class="user">
+              <%= link_to "Modifier votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %>
+            <% end %>
+            </div>
+            <div class="user">
+              <%= link_to "Délister le bar à jeu", @gaming_session, class: "button-orange", method: :delete if policy(@gaming_session).destroy? %>
+            </div>
+            </div>
+      <% else %>
+        <div class="forming">
+          <%= render "shared/form_booking", price: @gaming_session.price %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
