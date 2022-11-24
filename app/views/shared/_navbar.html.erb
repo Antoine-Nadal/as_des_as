@@ -8,15 +8,17 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class ="search-bar">
+        <%= form_with url: gaming_sessions_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "sah quel plaisir une search bar!"
+          %>
+          <%= submit_tag "Chercher", class: "btn btn-primary" %>
+        <% end %>
+      </div>
 
-      <%= form_with url: gaming_sessions_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a bar"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">

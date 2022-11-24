@@ -70,7 +70,7 @@ file13 = URI.open("app/assets/images/seeds/bar51.jpg")
 file14 = URI.open("app/assets/images/seeds/bar52.jpg")
 file15 = URI.open("app/assets/images/seeds/bar53.jpg")
 bar_a_jeu_5 = GamingSession.new(name: "Dernier bar avant la fin du monde", address: "19 Av. Victoria, 75001 Paris", number_of_participants: 50, description:"venez célébrer l'avènement de l'hiver nucléaire au DBALFDM, dans la joie et la bonne humeur", price:850, food:drink_food_boolean.sample, drink:drink_food_boolean.sample, game_type: GamingSession::GAMES_TYPES.shuffle.sample)
-bar_a_jeu_5.user = user_1
+bar_a_jeu_5.user = user_5
 bar_a_jeu_5.photos.attach(io: file13, filename: "bar51.jpg", content_type: "image/jpg")
 bar_a_jeu_5.photos.attach(io: file14, filename: "bar52.jpg", content_type: "image/jpg")
 bar_a_jeu_5.photos.attach(io: file15, filename: "bar53.jpg", content_type: "image/jpg")

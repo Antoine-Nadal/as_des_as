@@ -13,8 +13,8 @@
       <%# Prénom: <%= @gaming_session.user.first_name %>
       <%# Nom: <%= @gaming_session.user.last_name %>
       <div class="input" data-action="change->price#displayPrice">
-        <%= f.input :start_date, as: :string, :input_html => {class: 'response-project', data: { target: "price.startDate" }}%>
-        <%= f.input :end_date, as: :string, :input_html => {class: 'response-project', data: { target: "price.endDate" }}%>
+        <%= f.input :start_date, label:"date de début",as: :string, :input_html => {class: 'response-project', data: { target: "price.startDate" }}%>
+        <%= f.input :end_date, label:"date de fin", as: :string, :input_html => {class: 'response-project', data: { target: "price.endDate" }}%>
       </div>
       <div class="submit">
         <%= f.button :submit, 'réserver', class: "button-orange" %>

@@ -1,17 +1,17 @@
 <div class="container">
   <%= simple_form_for(gaming_session) do |f| %>
   <div class="input">
-      <%= f.input :name, :input_html => {class: 'response-project'}%>
-      <%= f.input :address,
+      <%= f.input :name, label: "Nom de votre bar:", :input_html => {class: 'response-project'}%>
+      <%= f.input :address, label: "Adresse de votre bar:",
         input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
         wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
       %>
-      <%= f.input :number_of_participants, :input_html => {class: 'response-project'}%>
-      <%= f.input :description, :input_html => {class: 'response-project'}%>
-      <%= f.input :game_type,  collection: GamingSession::GAMES_TYPES, :input_html => {class: 'response-project'} %>
-      <%= f.input :food, as: :select, collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
-      <%= f.input :drink, as: :select, collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
-      <%= f.input :price, :input_html => {class: 'response-project'}%>
+      <%= f.input :number_of_participants, label: "Capacité d'accueil:",:input_html => {class: 'response-project'}%>
+      <%= f.input :description, label: "Description:", :input_html => {class: 'response-project'}%>
+      <%= f.input :game_type, label: "Catégorie:", collection: GamingSession::GAMES_TYPES, :input_html => {class: 'response-project'} %>
+      <%= f.input :food, label: "Proposez vous un service de restauration?", as: :select, collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
+      <%= f.input :drink, as: :select, label:"Ya moyen de tiser ou c'est comment?", collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
+      <%= f.input :price, label:"Prix de la réservation à la journée:", :input_html => {class: 'response-project'}%>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <div class="submit">
         <%= f.button :submit, "Créer mon bar à jeu", class: "button-orange" %>
