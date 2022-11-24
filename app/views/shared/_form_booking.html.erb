@@ -14,7 +14,7 @@
         <%= f.input :start_date, label:"date de début",as: :string, :input_html => {class: 'response-project', data: { target: "price.startDate", flatpickr_target: "startDate" }}%>
         <%= f.input :end_date, label:"date de fin", as: :string, :input_html => {class: 'response-project', data: { target: "price.endDate",  flatpickr_target: "endDate" }}%>
       </div>
-      <div class="submit">
+      <div id="confetti-button" class="submit">
         <%= f.button :submit, 'réserver', class: "button-orange" %>
       </div>
     <% end %>
