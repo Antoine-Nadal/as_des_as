@@ -8,6 +8,7 @@
 @import "button_orange";
 @import "config/fonts";
 @import "banner";
+@import "icons";
 
 
 .title1 {
@@ -28,7 +29,7 @@
 
 .card-session {
   overflow: hidden;
-  height: 250px;
+  height: 270px;
   background: white;
   box-shadow: 0px 0px 6px 1px #17407C21;
   display: flex;
@@ -38,8 +39,15 @@
   margin-bottom: 1em;
   padding-left: 0;
   position:relative;
+}
 
+.card-session .icons {
 
+  position: absolute;
+  bottom:0;
+  right:0;
+  left: 165px;
+  margin-bottom: 10px;
 }
 
 .card-session img {
@@ -76,8 +84,16 @@
   padding: 16px;
   display: block;
   align-items: center;
+}
 
-
+.card-session .icons {
+  position: absolute;
+  bottom:0;
+  right:0;
+  left: 177px;
+  margin-bottom: 10px;
+  color:#FEA680;
+  padding-bottom: 5px;
 }
 
 .card-session .btn {
@@ -85,9 +101,7 @@
   bottom:0;
   right:0;
   margin-bottom: 10px;
-  // bottom: 10px;
-  // right: 10px
-  // margin-bottom: 10px;
+
 }
 
 .card-map {
