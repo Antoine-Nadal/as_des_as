@@ -4,8 +4,15 @@
   width: 100%;
   left: 0px;
   top: 0px;
-  box-shadow: 0px 0px 5px 2px #00000040;
+  box-shadow: 0px 0px 3px 1px #00000040;
+
 }
+
+.navbar > .container-fluid {
+  max-width: 90%;
+
+}
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
