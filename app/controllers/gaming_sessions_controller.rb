@@ -3,12 +3,18 @@ class GamingSessionsController < ApplicationController
   before_action :set_gaming_session, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gaming_sessions = policy_scope(GamingSession)
+    if params[:query]
+      @gaming_sessions = policy_scope(GamingSession)
+      @gaming_sessions = GamingSession.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @gaming_sessions = policy_scope(GamingSession)
+    end
     @markers = @gaming_sessions.geocoded.map do |gaming_session|
       {
         lat: gaming_session.latitude,
         lng: gaming_session.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {gaming_session: gaming_session})
+        info_window: render_to_string(partial: "info_window", locals: {gaming_session: gaming_session}),
+        image_url: helpers.asset_url("location.png")
       }
     end
   end
