@@ -26,17 +26,12 @@
       </div>
 
     </div>
-    <div class="col-6">
-        <% unless @gaming_session.user == current_user %>
-          <div class="forming">
-            <%= render "shared/form_booking" %>
-          </div>
-        <% end %>
-    </div>
-
+  </div>
+  <div class="col-6">
+      <% unless @gaming_session.user == current_user %>
+        <div class="forming">
+          <%= render "shared/form_booking", price: @gaming_session.price %>
+        </div>
+      <% end %>
+  </div>
 </div>
-
-<br>
-
-<br>
-<br>
