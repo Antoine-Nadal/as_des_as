@@ -3,51 +3,50 @@
     <%=image_tag "show-bar.png", alt:"show-bar"%>
     <h2 class= "t2"> <%= @gaming_session.name.capitalize %> </h2>
   </div>
-
-  <div class="row">
-    <div class="col-6">
-      <div class="card-creation-title">
-
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <% @gaming_session.photos.each_with_index do |photo, index| %>
-              <div class="carousel-item <%="active" if index == 0 %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, crop: :fill %>'); height: 250px;"></div>
-            <% end %>
+      <%# <% if current_user == @gaming_session.user %>
+  <% if policy(@gaming_session).edit? %>
+    <div class="row">
+      <div class="col-6">
+          <div class="card-creation-title">
+            <%= render "carrousel" %>
         </div>
       </div>
-      <div class="icons">
-          <i class="fa-solid fa-dice-six"></i>
-          <% if @gaming_session.food? %>
-            <i class="fa-solid fa-utensils"></i>
-          <% end %>
-          <% if @gaming_session.drink? %>
-            <i class="fa-solid fa-martini-glass"></i>
-          <% end %>
-        </div>
-
-        <p> <strong>Description : </strong> <%= @gaming_session.description.capitalize %> </p>
-         <p> <strong>Type de jeu : </strong>  <%= @gaming_session.game_type %> </p>
-      </div>
-    </div>
-    <div class="col-6">
-      <% if current_user == @gaming_session.user %>
-          <% if policy(@gaming_session).edit? %>
-          <div class="user-btn">
-            <div class="user">
-              <%= link_to "Modifier votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %>
-            <% end %>
+      <div class="col-6">
+        <%# <div class="card-creation-title"> %>
+          <div class="forming">
+            <div class="current-use">
+              <div>
+                <%= render "description_bar" %>
+              </div>
+              <div>
+              <%= render "icons" %>
+              </div>
             </div>
-            <div class="user">
+            <div class="user-btn">
+              <%= link_to "Modifier votre bar à jeu", edit_gaming_session_path(@gaming_session), class: "button-orange" %>
               <%= link_to "Délister le bar à jeu", @gaming_session, class: "button-orange", method: :delete if policy(@gaming_session).destroy? %>
             </div>
-            </div>
-      <% else %>
-        <div class="forming">
-          <%= render "shared/form_booking", price: @gaming_session.price %>
-        </div>
-      <% end %>
+          </div>
+        <%# </div> %>
+      </div>
     </div>
-  </div>
+    <% else %>
+      <div class="row">
+        <div class="col-6">
+          <div class="card-creation-title">
+            <%= render "carrousel" %>
+            <%= render "icons" %>
+            <%= render "description_bar", class:"description" %>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="forming">
+            <%= render "shared/form_booking", price: @gaming_session.price %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+<%# <% end %>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
