@@ -13,9 +13,8 @@
     align-items:center;
     display: flex;
     justify-content:flex-end;
-
-
 }
+
 .navbar > .container-fluid {
   max-width: 90%;
 
@@ -23,12 +22,12 @@
 
 .search {
   max-width: 150px;
-  margin-bottom: 24px;
+  margin-bottom: 0px;
 
 }
 
 .dropdown-menu {
-  margin: 20px;
+  margin: 20px 20px 20px;
   border-radius: 20px;
   border: 1px solid #19407D;
   min-width: 260px;
