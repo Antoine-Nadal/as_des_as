@@ -7,29 +7,48 @@
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class ="search-bar">
+      </button >
+      <div class ="search-bar" disabled>
+
         <%= form_with url: gaming_sessions_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
               params[:query],
               class: "form-control",
               placeholder: "sah quel plaisir une search bar!"
           %>
-          <%= submit_tag "Chercher", class: "btn btn-primary" %>
+            <%= submit_tag "Chercher", class:"blue", id: "nav-bar-bnt"  %>
         <% end %>
-      </div>
 
+      </div>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
             <li class="btn-nav " >
               <%= link_to "Ajouter mon bar à jeu", new_gaming_session_path, class: "button-blue"%>
-              <%= link_to "Mon espace", dashboard_path, class: "button-blue" %>
               <%# <%= link_to "Messages", "#", class: "button-blue" %> %>
             <%# <li class="button-blue mx-3"> %>
               <%# <%= link_to "Home", "/", class: "button-blue" %>
             <%# </li> %>
+            </li>
+            <li class="btn-nav">
+              <%= link_to "Mon espace", dashboard_path, class: "button-blue" %>
+            </li>
+            <li class="btn-nav ">
+              <div id="filter"style="position:relative">
+                <button  class="button-blue dropdown-toggle" id="filterDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Filtrer </button>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="filterDropdown">
+                  <%= form_tag(gaming_sessions_path, method: :get) do %>
+                    <% GamingSession::GAMES_TYPES.each do |category| %>
+                      <div class="category-option d-block p-2 m-2">
+                        <%= check_box_tag "gaming_session[game_type][]", category, false, id: "gaming_session_game_type_#{category}" %> <%= category %>
+                      </div>
+                    <% end %>
+                    <%= submit_tag "Filtrer", class:"blue", id: "nav-bar-bnt" %>
+                  <% end %>
+                </div>
+              </div>
+            </li>
               <% if current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% else %>
@@ -41,9 +60,22 @@
                 <p><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %></p>
               </div>
             </li>
-            <% else %>
+          <% else %>
             <ul>
               <li>
+              <div style="position:relative">
+          <button type="button" class="button-blue dropdown-toggle" id="filterDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Filtrer </button>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="filterDropdown">
+              <%= form_tag(gaming_sessions_path, method: :get) do %>
+                <% GamingSession::GAMES_TYPES.each do |category| %>
+                  <div class="category-option d-block mb-2">
+                    <%= check_box_tag "gaming_session[game_type][]", category, false, id: "gaming_session_game_type_#{category}" %> <%= category %>
+                  </div>
+                <% end %>
+                <%= submit_tag('Filter',class: 'inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black') %>
+              <% end %>
+            </div>
+        </div>
                 <%= link_to new_user_session_path do %>
                   <i class=" fa-solid fa-bars" style="color: #19407D"></i>
                 <% end %>
