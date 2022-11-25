@@ -5,7 +5,11 @@ class GamingSessionsController < ApplicationController
   def index
     if params[:query]
       @gaming_sessions = policy_scope(GamingSession)
-      @gaming_sessions = GamingSession.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR address ILIKE :query"
+      @gaming_sessions = GamingSession.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:gaming_session]
+      @gaming_sessions = policy_scope(GamingSession)
+      @gaming_sessions = GamingSession.where("game_type IN (?)", params[:gaming_session][:game_type])
     else
       @gaming_sessions = policy_scope(GamingSession)
     end
