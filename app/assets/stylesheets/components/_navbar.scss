@@ -11,6 +11,9 @@
 
 .navbar-nav {
     align-items:center;
+    display: flex;
+    justify-content:flex-end;
+
 
 }
 .navbar > .container-fluid {
@@ -18,10 +21,18 @@
 
 }
 
+.search {
+  max-width: 150px;
+  margin-bottom: 24px;
+
+}
+
 .dropdown-menu {
   margin: 20px;
   border-radius: 20px;
   border: 1px solid #19407D;
+  min-width: 260px;
+
 
 }
 
@@ -73,7 +84,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 250px;
   .category-option {
     padding: 0.5rem !important;
     width: 90%;
@@ -92,9 +102,10 @@
     color: #19407D;
     text-transform: uppercase;
     text-decoration: none;
-    margin-right: 160px;
     border: 2px solid #19407D;
     background-color: #FFFFFF;
+    margin-left: 30%;
+    margin-bottom: 10PX;
 
         &:hover{
     border: none;
@@ -102,6 +113,8 @@
     color:#19407D;
     animation-timing-function: ease-out;
     animation-duration: 300ms;
+    border: 2px solid #ffffff;
+
 
         }
       }
@@ -127,6 +140,8 @@
     color:#19407D;
     animation-timing-function: ease-out;
     animation-duration: 300ms;
+    border: 2px solid #ffffff;
+
 
 
   }
