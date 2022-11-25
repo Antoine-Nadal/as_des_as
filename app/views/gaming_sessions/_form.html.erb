@@ -8,7 +8,8 @@
       %>
       <%= f.input :number_of_participants, label: "Capacité d'accueil:",:input_html => {class: 'response-project'}%>
       <%= f.input :description, label: "Description:", :input_html => {class: 'response-project'}%>
-      <%= f.input :game_type, label: "Catégorie:", collection: GamingSession::GAMES_TYPES, :input_html => {class: 'response-project'} %>
+      <%= f.input :game_type %>
+      <%# <%= f.input :game_type, label: "Catégorie:", collection: GamingSession::GAMES_TYPES, :input_html => {class: 'response-project'} %> %>
       <%= f.input :food, label: "Proposez vous un service de restauration?", as: :select, collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
       <%= f.input :drink, as: :select, label:"Ya moyen de tiser ou c'est comment?", collection: [['Yes',true], ['No',false]], required: true, :input_html => {class: 'response-project'} %>
       <%= f.input :price, label:"Prix de la réservation à la journée:", :input_html => {class: 'response-project'}%>
