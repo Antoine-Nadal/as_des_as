@@ -26,13 +26,17 @@
           <% if user_signed_in? %>
             <li class="btn-nav " >
               <%= link_to "Ajouter mon bar à jeu", new_gaming_session_path, class: "button-blue"%>
-              <%= link_to "Mon espace", dashboard_path, class: "button-blue" %>
               <%# <%= link_to "Messages", "#", class: "button-blue" %> %>
             <%# <li class="button-blue mx-3"> %>
               <%# <%= link_to "Home", "/", class: "button-blue" %>
             <%# </li> %>
-            <li class="btn-nav "><div style="position:relative">
-              <button  class="button-blue dropdown-toggle" id="filterDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Filtrer </button>
+            </li>
+            <li class="btn-nav">
+              <%= link_to "Mon espace", dashboard_path, class: "button-blue" %>
+            </li>
+            <li class="btn-nav ">
+              <div id="filter"style="position:relative">
+                <button  class="button-blue dropdown-toggle" id="filterDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Filtrer </button>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="filterDropdown">
                   <%= form_tag(gaming_sessions_path, method: :get) do %>
                     <% GamingSession::GAMES_TYPES.each do |category| %>
@@ -40,7 +44,7 @@
                         <%= check_box_tag "gaming_session[game_type][]", category, false, id: "gaming_session_game_type_#{category}" %> <%= category %>
                       </div>
                     <% end %>
-                    <%= submit_tag('Filtrer',class: 'button-blue') %>
+                    <%= submit_tag "Filtrer", class:"blue", id: "nav-bar-bnt" %>
                   <% end %>
                 </div>
               </div>
