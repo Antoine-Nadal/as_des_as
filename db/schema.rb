@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_24_110032) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_100532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,7 +70,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_110032) do
     t.string "game_type"
     t.boolean "food"
     t.boolean "drink"
+    t.integer "note"
     t.index ["user_id"], name: "index_gaming_sessions_on_user_id"
+  end
+
+  create_table "notations", force: :cascade do |t|
+    t.decimal "note"
+    t.bigint "gaming_session_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gaming_session_id"], name: "index_notations_on_gaming_session_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,4 +101,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_24_110032) do
   add_foreign_key "bookings", "gaming_sessions"
   add_foreign_key "bookings", "users"
   add_foreign_key "gaming_sessions", "users"
+  add_foreign_key "notations", "gaming_sessions"
 end

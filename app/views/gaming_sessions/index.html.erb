@@ -21,7 +21,7 @@
       <% @gaming_sessions.each do |gaming_session| %>
         <div class="row">
             <div class="card-session">
-               <%= cl_image_tag gaming_session.photos.first.key, height: 300, width: 400, crop: :fill %>
+               <%# <%= cl_image_tag gaming_session.photos.first.key, height: 300, width: 400, crop: :fill %> %>
                 <div class="card-session-infos"  >
                   <h2><%= link_to gaming_session.name.titleize, gaming_session_path(gaming_session)%></h2>
                   <p> <%= gaming_session.address %></p>
